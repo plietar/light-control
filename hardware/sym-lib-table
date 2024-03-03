@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "lmr51606")(type "KiCad")(uri "/Users/paul/Projects/CalanMai/solar-panel-monitor/hardware/lmr51606.kicad_sym")(options "")(descr ""))
+)
