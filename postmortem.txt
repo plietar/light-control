@@ -1,0 +1,7 @@
+Notes from v1 hardware:
+
+- GPIO6 is not a strapping pin and does not need pulling
+- GPIO2 might need pulling up. Seems to work okay even without.
+- Capacitor might be needed between EN and GND for auto-reset. Seems to work okay even without.
+- Terminal block too small
+- EN needs to be pulled up

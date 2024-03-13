@@ -1,0 +1,9 @@
+## IDF Component Manager Manifest File
+dependencies:
+  espressif/led_indicator: "^0.9.2"
+  idf:
+    version: ">=4.1.0"
+
+  esp-mqtt-ota:
+    #git: https://github.com/plietar/esp-mqtt-ota
+    path: ../../../esp-mqtt-ota

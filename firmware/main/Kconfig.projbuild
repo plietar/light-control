@@ -1,0 +1,39 @@
+menu "Application configuration"
+  config WIFI_SSID
+    string "WiFi SSID"
+  config WIFI_PASSWORD
+    string "WiFi Password"
+  config MQTT_BROKER
+    string "MQTT broker"
+    default "mqtt.lietar.net"
+  config MQTT_USERNAME
+    string "MQTT username"
+  config MQTT_PASSWORD
+    string "MQTT password"
+  config MQTT_TOPIC_PREFIX
+    string "MQTT topic prefix"
+    default "calan-mai/lights"
+  config RUUVI_ENABLE
+    bool "Enable BLE and RuuviTag support"
+  config RUUVI_MQTT_TOPIC_PREFIX
+    string "MQTT topic prefix for Ruuvi tag data"
+    default "calan-mai/ruuvi"
+endmenu
+
+menu "Hardware configuration"
+  config HW_GPIO_PRIMARY_LED_NUM
+    int "GPIO pin of LED signal"
+    default 3
+  config HW_GPIO_SECONDARY_LED_NUM
+    int "GPIO pin of LED signal"
+    default 2
+  config HW_GPIO_CONTROL_NUM
+    int "GPIO pin of CONTROL signal"
+    default 4
+  config HW_GPIO_INPUT_NUM
+    int "GPIO pin of INPUT signal"
+    default 5
+  config HW_GPIO_STATE_NUM
+    int "GPIO pin of STATE signal"
+    default 7
+endmenu

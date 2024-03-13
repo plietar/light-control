@@ -1,0 +1,20 @@
+[defaults]
+fade = true
+fade_time = 200
+
+[devices."30:30:f9:ed:ec:6c"]
+group = 1
+
+[devices."30:30:f9:ed:ec:b8"]
+group = 1
+
+[devices."30:30:f9:ee:2e:9c"]
+group = 1
+
+[devices."30:30:f9:ee:2e:60"]
+group = 1
+
+[devices."30:30:f9:ed:ec:90"]
+fade = false
+
+#[devices."30:30:f9:ed:ec:7c"]

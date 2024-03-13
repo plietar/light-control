@@ -1,0 +1,12 @@
+# This file was generated using idf.py save-defconfig. It can be edited manually.
+# Espressif IoT Development Framework (ESP-IDF) Project Minimal Configuration
+#
+CONFIG_IDF_TARGET="esp32c3"
+CONFIG_ESPTOOLPY_FLASHSIZE_4MB=y
+CONFIG_PARTITION_TABLE_CUSTOM=y
+CONFIG_WIFI_SSID="CalanMaiLegacy"
+CONFIG_WIFI_PASSWORD=""
+CONFIG_MQTT_USERNAME="calan-mai-gateway"
+CONFIG_MQTT_PASSWORD=""
+CONFIG_COMPILER_OPTIMIZATION_SIZE=y
+CONFIG_MQTT_SKIP_PUBLISH_IF_DISCONNECTED=y

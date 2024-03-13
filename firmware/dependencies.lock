@@ -1,0 +1,58 @@
+dependencies:
+  esp-mqtt-ota:
+    dependencies:
+    - name: idf
+      version: '>=4.1.0'
+    source:
+      path: /Users/paul/Projects/CalanMai/esp-mqtt-ota
+      type: local
+    version: 0.1.0
+  espressif/cmake_utilities:
+    component_hash: 351350613ceafba240b761b4ea991e0f231ac7a9f59a9ee901f751bddc0bb18f
+    dependencies:
+    - name: idf
+      require: private
+      version: '>=4.1'
+    source:
+      registry_url: https://components.espressif.com/
+      type: service
+    version: 0.5.3
+  espressif/led_indicator:
+    component_hash: 7a95d7eb331a71a0dc29ef904a6b6b513fa23f0ce42776545a1e950c40ee94bc
+    dependencies:
+    - name: espressif/cmake_utilities
+      registry_url: https://components.espressif.com/
+      require: private
+      version: 0.*
+    - name: idf
+      require: private
+      version: '>=4.0'
+    - name: espressif/led_strip
+      registry_url: https://components.espressif.com/
+      require: public
+      version: '>=2.5.2'
+    source:
+      registry_url: https://components.espressif.com/
+      type: service
+    version: 0.9.2
+  espressif/led_strip:
+    component_hash: 28c6509a727ef74925b372ed404772aeedf11cce10b78c3f69b3c66799095e2d
+    dependencies:
+    - name: idf
+      require: private
+      version: '>=4.4'
+    source:
+      registry_url: https://components.espressif.com/
+      type: service
+    version: 2.5.5
+  idf:
+    source:
+      type: idf
+    version: 5.3.0
+direct_dependencies:
+- esp-mqtt-ota
+- espressif/led_indicator
+- idf
+manifest_hash: d976f1471bf2c3ee6766c7a1827b64b7a9e6c68f078d1a6b7c4080ef06348b64
+target: esp32c3
+version: 2.0.0
