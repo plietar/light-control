@@ -16,5 +16,10 @@ group = 1
 
 [devices."30:30:f9:ed:ec:90"]
 fade = false
+group = 2
+
+[devices."30:30:f9:ed:ec:b4"] 
+fade = false
+group = 2
 
 #[devices."30:30:f9:ed:ec:7c"]

@@ -1,13 +1,13 @@
 import argparse
-import subprocess
-import datetime
 import asyncio
+import datetime
 import json
 import netrc
 import ssl
+import subprocess
 from collections import defaultdict
 
-import asyncio_mqtt as aiomqtt
+import aiomqtt
 import toml
 
 
@@ -50,7 +50,8 @@ async def send_config(args):
 
         for mac in devices:
             await client.publish(
-                f"calan-mai/lights/{mac}/config/set", json.dumps(defaults | config["devices"][mac])
+                f"calan-mai/lights/{mac}/config/set",
+                json.dumps(defaults | config["devices"][mac]),
             )
             await client.publish(f"calan-mai/lights/{mac}/peers/set", json.dumps(peers))
 
@@ -66,7 +67,11 @@ async def send_firmware(args):
             f.truncate()
 
         with open("date.txt", "w") as f:
-            t = datetime.datetime.now().astimezone(tz=datetime.timezone.utc).replace(microsecond=0)
+            t = (
+                datetime.datetime.now()
+                .astimezone(tz=datetime.timezone.utc)
+                .replace(microsecond=0)
+            )
             f.write(t.isoformat())
 
         subprocess.run(["idf.py", "build"], check=True)
@@ -98,6 +103,7 @@ async def send_command(args):
     async with create_client(args) as client:
         for mac in devices:
             await client.publish(f"calan-mai/lights/{mac}/command", args.value)
+
 
 async def cleanup(args):
     async with create_client(args) as client:
@@ -164,7 +170,6 @@ async def main():
 
     p = subparsers.add_parser("cleanup")
     p.set_defaults(func=cleanup)
-
     args = parser.parse_args()
     await args.func(args)
 

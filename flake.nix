@@ -16,7 +16,6 @@
       devShells.default = pkgs.mkShell {
         buildInputs = [
           (pkgs.python3.withPackages (ps: with ps; [ ps.aiomqtt ps.toml ]))
-          pkgs.moreutils
 
           (inputs'.esp-dev.packages.esp-idf-full.override {
             toolsToInclude = [ ];
