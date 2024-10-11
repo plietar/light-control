@@ -1,6 +1,6 @@
 {
   inputs = {
-    nixpkgs.url = "nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "nixpkgs/nixos-24.05";
     flake-parts.url = "github:hercules-ci/flake-parts";
     esp-dev.url = "github:mirrexagon/nixpkgs-esp-dev";
     esp-toolchain.url = "github:plietar/nixpkgs-esp-toolchain";
@@ -23,10 +23,15 @@
           inputs'.esp-toolchain.packages.riscv32-esp-gcc-20240530
         ];
       };
-
       devShells.ci = pkgs.mkShell {
         buildInputs = [
           inputs'.esp-dev.packages.esp-idf-esp32c3
+        ];
+      };
+      devShells.hardware = pkgs.mkShell {
+        buildInputs = [
+          inputs'.kicad-parts.packages.interactive-html-bom
+          pkgs.kicad-small
         ];
       };
     };

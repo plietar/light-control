@@ -21,11 +21,16 @@ jobs:
     - uses: DeterminateSystems/magic-nix-cache-action@main
 
     - name: Build interactive bom
-      run: >
-        nix shell -L --inputs-from . kicad-parts#interactive-html-bom --command \
+      run: |
+        nix develop -L .#hardware --command \
           generate_interactive_bom --no-browser --layer-view F hardware/light-control.kicad_pcb --dest-dir public --name-format index
       env:
         INTERACTIVE_HTML_BOM_NO_DISPLAY: 1
+
+    - name: Export PDF Schmetics
+      run: |
+        nix develop -L .#hardware --command \
+          kicad-cli sch export pdf --output hardware/public/schematic.pdf hardware/light-control.kicad_sch
 
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3

@@ -5,5 +5,4 @@ dependencies:
     version: ">=4.1.0"
 
   esp-mqtt-ota:
-    #git: https://github.com/plietar/esp-mqtt-ota
-    path: ../../../esp-mqtt-ota
+    git: https://github.com/plietar/esp-mqtt-ota
