@@ -26,10 +26,7 @@
 
       devShells.ci = pkgs.mkShell {
         buildInputs = [
-          (inputs'.esp-dev.packages.esp-idf-full.override {
-            toolsToInclude = [ ];
-          })
-          inputs'.esp-toolchain.packages.riscv32-esp-gcc-20240530
+          inputs'.esp-dev.packages.esp-idf-esp32c3
         ];
       };
     };
